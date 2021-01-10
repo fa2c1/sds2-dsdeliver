@@ -1,6 +1,4 @@
-import { type } from "os";
 import { formatPrice } from "./helpers";
-import { Product } from "./types";
 
 type Props = {
     amount: number;
