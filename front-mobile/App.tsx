@@ -3,8 +3,9 @@ import { useFonts, OpenSans_400Regular, OpenSans_700Bold} from "@expo-google-fon
 import AppLoading from "expo-app-loading";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Header from "./src/Header";
+import Header from "./src/Header/Index";
 import Home from "./src/Home";
+
 
 export default function App() {
   let [fontsLoaded] = useFonts({
