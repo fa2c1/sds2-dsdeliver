@@ -10,8 +10,13 @@
   "dependencies": {
     "@expo-google-fonts/open-sans": "^0.1.0",
     "@react-native-community/masked-view": "0.1.10",
+<<<<<<< HEAD
     "@react-navigation/native": "^5.9.0",
     "@react-navigation/stack": "^5.13.0",
+=======
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+>>>>>>> 4a3dc00733a29d36da49c848f42bdde4107b1c82
     "expo": "~40.0.0",
     "expo-app-loading": "^1.0.1",
     "expo-font": "~8.4.0",
