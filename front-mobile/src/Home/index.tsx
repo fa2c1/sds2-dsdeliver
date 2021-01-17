@@ -6,10 +6,10 @@ import Header from "../Header/Index";
 
 export default function Home() {
 
-  const navegation = useNavigation();
+  const navigation = useNavigation();
 
   const handleOnPress = () =>{
-    navegation.navigate("Orders");
+    navigation.navigate("Orders");
   }
 
   return (
@@ -21,12 +21,12 @@ export default function Home() {
           Acompanhe os pedidos e {"\n"} entregue no prazo!
         </Text>
         <Text style={styles.subTitle}>
-          Receba todos os pedidos do seu {"\n"} restaurante na palma da sua mão
+          Receba todos os pedidos do seu {"\n"} restaurante na palma da sua mão.
         </Text>
       </View>
       <View style={styles.footer}>
         <RectButton style={styles.button} onPress={handleOnPress}>
-          <Text style={styles.buttonText}>VER PEDIDOS</Text>
+          <Text style={styles.buttonText}>PEDIDOS</Text>
         </RectButton>
       </View>
     </>
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
     letterSpacing: -0.24,
   },
   
-});;
+})

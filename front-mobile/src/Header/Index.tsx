@@ -5,10 +5,10 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 export default function Header() {
 
-  const navegation = useNavigation();
+  const navigation = useNavigation();
 
   const handleOnPress = () =>{
-    navegation.navigate("Home");
+    navigation.navigate("Home");
   }
 
   return (
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans_700Bold", 
     },
     
-});;
+})

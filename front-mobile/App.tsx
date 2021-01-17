@@ -1,8 +1,8 @@
 import React from "react";
-import { useFonts, OpenSans_400Regular, OpenSans_700Bold} from "@expo-google-fonts/open-sans";
 import AppLoading from "expo-app-loading";
-import { StatusBar } from "expo-status-bar";
+import { useFonts, OpenSans_400Regular, OpenSans_700Bold} from "@expo-google-fonts/open-sans";
 import { StyleSheet, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import Routes from "./src/Routes";
 
 export default function App() {

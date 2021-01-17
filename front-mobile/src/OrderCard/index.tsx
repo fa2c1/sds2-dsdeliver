@@ -1,26 +1,52 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native";
+import { Order } from "../Types";
+import dayjs from "dayjs";
+import "dayjs/locale/pt-br";
+import relativeTime from "dayjs/plugin/relativeTime";
 
-export default function OrderCard() {
+dayjs.locale("pt-br");
+dayjs.extend(relativeTime);
+
+type Props = {
+  order: Order;
+}
+
+export function formatPrice(price: number){
+  const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  });
+  return formatter.format(price);
+}
+
+function dateFromNow(date: string) {
+  return dayjs(date).fromNow();
+}
+
+export default function OrderCard({order}: Props) {
   return (
-      <View style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.orderName}>Pedido x</Text>
-            <Text style={styles.orderPrice}>R$ 0,00</Text>
-          </View>
-          <Text style={styles.text}>Momento</Text>
-          <View style={styles.productsList}>
-              <Text style={styles.text}>Produto Pedido</Text>
-          </View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.orderName}>Pedido N: {order.id}</Text>
+        <Text style={styles.orderPrice}>{formatPrice(order.total)}</Text>
       </View>
+      <Text style={styles.text}>{dateFromNow(order.moment)}</Text>
+      <View style={styles.productsList}>
+        {order.products.map(product => (
+          <Text key={product.id} style={styles.text}>{product.name}</Text>
+        ))}
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     marginTop: "10%",
-    marginLeft: "2%",
-    marginRight: "2%",
+    marginLeft: "3%",
+    marginRight: "3%",
     marginBottom: "2%",
     padding: 15,
     backgroundColor: "#FFF",
@@ -64,12 +90,12 @@ const styles = StyleSheet.create({
     color: "#DA5C5C",
     fontFamily: "OpenSans_700Bold",
   },
-
+  
   productsList: {
     borderTopColor: "#E6E6E6",
     borderTopWidth: 1,
     marginTop: 20,
     paddingTop: 15,
-  }
+  },
 
-});
+})
